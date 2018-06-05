@@ -1,4 +1,38 @@
-<h1>Index</h1>
+<section id="section_list_index">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 offset-md-2">
+        <%= form_for @list do |f| %>
+          <%= f.text_field :title, placeholder: "+ ADD Task", class: "form-control form-control-lg" %>
+        <% end %>
+
+        <% @lists.each do |list| %>
+          <div class="card mt-3 mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-2 text-center">
+                  <i class="far fa-square"></i>
+                </div>
+                <div class="col-md-8"><h4 class="card-title"><%= list.title %></h4></div>
+                <div class="col-md-2">
+                  <i class="far fa-star mr-4"></i>
+                  <%= link_to edit_list_path(list) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                  <% end %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 <% @lists.each do |list| %>
   <ul>
@@ -11,4 +45,3 @@
   </ul>
 <% end %>
 
-<%= link_to "New", new_list_path %>

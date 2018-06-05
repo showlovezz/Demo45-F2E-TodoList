@@ -4,10 +4,10 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @list = List.new
   end
 
   def new
-    @list = List.new
   end
 
   def create
@@ -29,7 +29,7 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to lists_path, notice: "修改待辦事項"
     else
-      redirect_to lists_path, alert: "修改待辦失敗"
+      render "edit", alert: "修改待辦失敗"
     end
   end
 
