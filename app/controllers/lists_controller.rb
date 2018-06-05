@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
 
-  before_action :find_list, only: [:show, :edit, :update, :destroy]
+  before_action :find_list, only: [:show, :edit, :update, :destroy, :complete]
 
   def index
     @lists = List.all
@@ -36,6 +36,11 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     redirect_to lists_path, notice: "刪除待辦事項"
+  end
+
+  def complete
+    @list.update_attribute(:done , true)
+    redirect_to lists_path
   end
 
   private
