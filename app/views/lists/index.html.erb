@@ -1,0 +1,14 @@
+<h1>Index</h1>
+
+<% @lists.each do |list| %>
+  <ul>
+    <li>
+      <%= list.title %>
+      <%= link_to "Show", list_path(list) %>
+      <%= link_to "Edit", edit_list_path(list) %>
+      <%= link_to "Delete", list_path(list), method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to "New", new_list_path %>
