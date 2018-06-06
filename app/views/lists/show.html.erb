@@ -1,1 +1,32 @@
-<h1>Show page</h1>
+<section id="section_list_show">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 offset-md-2">
+        <%#= render "form" %>
+
+        <div class="card mt-3 mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2 text-center">
+                <i class="far fa-square"></i>
+              </div>
+              <div class="col-md-8"><h4 class="card-title"><%= @list.title %></h4></div>
+              <div class="col-md-2">
+                <i class="far fa-star mr-4"></i>
+                <%= link_to list_path(@list) do %>
+                  <i class="fas fa-pencil-alt"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

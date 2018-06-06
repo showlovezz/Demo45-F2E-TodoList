@@ -1,8 +1,3 @@
 <%= form_for @list do |f| %>
-
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %>
-
-  <%= f.submit %>
-
+  <%= f.text_field :title, placeholder: "+ ADD Task", class: "form-control form-control-lg" %>
 <% end %>
